@@ -1,0 +1,14 @@
+2026-11-14 11:09 - WARNING - Save me!!
+2026-11-14 11:26 - ERROR - DonutCalculationError
+Traceback (most recent call last):
+  File "D:\Krishna\CareerPath\EntryLevelBackendDev\ResumeChecklist\Python\Logging\RealPython\04_capturing_stack_trace.py", line 16, in <module>
+    donuts_per_guest = donuts / guests
+                       ~~~~~~~^~~~~~~~
+ZeroDivisionError: division by zero
+2026-11-14 11:27 - ERROR - DonutCalculationError
+2026-11-14 11:27 - ERROR - DonutCalculationError
+Traceback (most recent call last):
+  File "D:\Krishna\CareerPath\EntryLevelBackendDev\ResumeChecklist\Python\Logging\RealPython\04_capturing_stack_trace.py", line 26, in <module>
+    donuts_per_guest = donuts / guests
+                       ~~~~~~~^~~~~~~~
+ZeroDivisionError: division by zero
