@@ -1,4 +1,4 @@
 SELECT
-	last_name || ', ' || LEFT(email, POSITION(last_name IN email)-2)
+	last_name || ', ' || LEFT(email, POSITION('.' IN email)-1)
 FROM
 	customer;
