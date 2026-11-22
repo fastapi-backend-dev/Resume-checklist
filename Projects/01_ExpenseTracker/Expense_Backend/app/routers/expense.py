@@ -5,6 +5,8 @@ from core.db import get_db
 from schemas.api_response import APIResponse
 from schemas.expense import ExpenseRequestDto, ExpenseResponseDto
 from models.expense import Expense
+from core.secure import get_current_user
+from models.user import User
 
 expense_router = APIRouter(
     prefix="/expenses",
@@ -14,7 +16,7 @@ expense_router = APIRouter(
 
 # Create a new expense
 @expense_router.post("/", response_model=APIResponse, status_code=status.HTTP_201_CREATED)
-def create_expense(expense_request_dto: ExpenseRequestDto, db: Session = Depends(get_db)):
+def create_expense(expense_request_dto: ExpenseRequestDto, db: Session = Depends(get_db), current_user: User=Depends(get_current_user)):
     new_expense = Expense(
         title=expense_request_dto.title,
         amount=expense_request_dto.amount,

@@ -23,3 +23,15 @@ class UserUpdateDto(BaseModel):
     username: str = Field(..., min_length=3, max_length=50, description="Username of the user")
     email: str = Field(..., max_length=100, description="Email of the user")
     password: str = Field(..., min_length=6, max_length=100, description="Password of the user")
+
+
+
+# Authentication DTOs
+class LoginRequest(BaseModel):
+    email: str = Field(..., max_length=100, description="Email of the user")
+    password: str = Field(..., min_length=6, max_length=100, description="Password of the user")
+
+
+class LoginResponse(BaseModel):
+    access_token: str = Field(..., description="JWT access token")
+    user: UserResponseDto = Field(..., description="User details associated with the token")
